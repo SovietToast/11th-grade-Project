@@ -1,0 +1,98 @@
+def main():
+  import random
+  import string
+  while userAlive == true:
+    while userTurnActctions > 0 == true:
+        #check if dead
+    
+        #check where they are, and what state
+        #ask what they want to do
+        mainPromt = "What you like to do?"
+        #display options
+        userResPromt = raw_input(mainPromt)
+        #check actions left
+        if actionsOnTurn == 0:
+        
+        #next turn
+        if actionsOnTurn < attempmtedActionCost:
+          mainRes = "im sorry, you dont have enough actions for that" 
+   
+  while userAlive == false
+    print "game over, Would you like to try again?"
+    userAnswer = raw_input(prompt)
+    userAnswer = string.lower(userAnswer)
+    userWordList = string.split(userAnswer)
+    for userWord in userWordList:
+       if userWord in listYes
+         charictercreation()
+
+
+def actionsOnTurn():
+  baseActions == 5
+  endofturn actons == 0
+  fullActions == 5
+  standerdActions == 3
+  moveActions == 2
+  freeActions == 0
+    
+charictercreation():
+  #choose race
+  #hoose skills
+  #given equepmet
+  #back to main
+def skillUp():
+  #count # of actions taken
+  skillup1 = string.replace#(skill,old,old + 1)
+    
+def human():
+    bodyparts = [RUL,RLL,LUL,LLL,LT,UT,RS,LS,LUA,LLA,LH,RUA,RLA,RH,N,J,H]
+    #code = fist letters of that part for example RUL = right upper leg
+    #I Will attemt to model damage to tissue later
+    if RUL in Missingparts
+        RLA == Missing
+    #rules baised on body parts
+    #parts list
+      #(PART Connections)
+    
+def AI():
+   #chck list of opponet's body parts, if one is armourd deencetivse (baised on wepons and +/-) hitting that part
+   
+#exsample form self)
+def playerCharicterRandom():
+    #random exsampl char
+    
+def combatant():
+    skillE = random.randint(0,2)
+    if skillE == [0,1,2]:
+        eWeponSkill = unskilled
+    armourLvlE = clothThin:
+def combatSimplified():
+    #user picks part to attack
+    userInput = rawinput #list
+    diceRoll = random.randint(0,20)
+    diceRollE = random.randint(0,20)
+    if userWeponSkill == unskilled:
+        diceRoll = diceRoll-2
+    if eWeponSkill == unskilled:
+        parryChance = parryChance-2
+    if diceRoll < diceRollE:
+        Hit == True
+    if diceRoll = diceRollE
+        #enter mode?
+    if diceRoll > diceRollE:
+        Hit == False
+    if Hit == True
+        if armourLvlE = clothThin:
+            #ups damage and sevarty
+            seriousWoundChance = seriousWoundChance + 3
+            bleedingSpeed = bleedingSpeed + 10%
+        #sicsesful
+        #check penatration cacualtons 
+        #if pen = true 
+        # wound cac
+
+
+
+
+      
+     
