@@ -1,0 +1,222 @@
+#Sean Towse 12.4.17
+import time
+import string
+import random
+def main():
+    print "this is main, it handles everything"
+    userName = getUserName()
+    greetUser(userName)
+    playerSkills = createCharacter(userName)
+    theBigBookOfConstants()
+    player(playerSkills)
+    while playerAlive == true:
+        getWalkDirection()
+        if roomType == fight:
+            generateEnemeyWeighted(playerSkills, userEqu)
+            #store stats
+            comabat(userSkills, userEqu, botSkills, botEqu)
+            updateScore(winner)
+            if playerAlive == false:
+                displayGameOver()
+                announceFinalResults(userName, userScore, computerScore)
+                askForReplay(userName)
+            if playerAlive == true:
+                break
+            break
+        if roomType == loot:
+            displayLoot(userName, userSkills, userEqu)
+def theBigBookOfThings():
+    # units are in metric, and MPA for force Grams for weight
+    http://www.bronze-age-swords.com/intro.htm
+    mat={ bronze: { desenty: 8.8 g/cc, Tensile strength Yeild: 125 , Tensile strength Break: 250, 
+def player(playerSkills):
+    print playerSkills
+    userEqu ={"defaultShirt" :{ "weight" : 1, "piercingRes" : 0 , "cuttingRes": 0}, "defaultPants" :{"weight" : 1, "piercingRes" : 0, "cuttingRes": 0, "defaultWepon":{"Weight": 800g , "sharpness" : 1000 , "length": 36 , "Blade Lenthg": 29, "matreal": bronze}}}
+    
+def comabat(dictionaryGeneral):
+    print "this handles combat"
+    userThrow = getPlayerThrow()
+    botThrow = getBotThrow()
+    speedCaculation()
+    if userThrow == first:
+        caculations(userThrow)
+        #update dicotnary
+    #if damage == dehablitating: 
+       #skip turn for second
+    #if it hits
+       #apply debuff
+      #caculations(botThrow)
+      #calcuations baised of type of strike
+      #if botThrow == first:
+      #caculations(botthrow)
+      #update dicotnary
+      #if damage == dehablitating: 
+          #skip turn for second
+      #if damage == true:
+          #apply debuff
+      #caculations(userThrow)
+  #do the next one
+  #announce results of the round
+    #update the player status
+  #next tick
+  #if player == dead
+      #announce final results
+      #say the game is over
+def getUserName():
+    #gets User's Name
+    prompt = "what is your name young lad?"
+    userName = raw_input(prompt)
+    userName = string.capitalize(userName)
+    return userName
+def greetUser(userName):
+    #code to greet the user goes here
+    print "hello " + userName + ", let's go on an adventure!"
+def createCharacter(userName):
+    print "handles creation of the PC"
+    skills = ['Int','Chr' ,'Str' ,'Con','Wis','Dex']
+    userInputs= []
+    #Make there be a limiting thing
+    for key in skills:
+        waitingForValid = true
+        while waitingForValid:
+            prompt = "how many points would you like to put into " + key + "? input 'help' for a skill guide"
+            userInput = raw_input(prompt)
+            if userInput == "help":
+                print "ablity 1-5 very bad, 5-11 normal, 12-15 - Above Average, 16-19 - Genius-level, 20-23 - Superhuman, 24+ - crazy good"
+                userInput = raw_input(prompt)
+            isItANumber = userInput.isnumeric()
+            if isItANumber:
+            
+                waitingForValid == false
+                userInputs.append(userInput)
+                break
+            if  isItANumber == false:
+                print "that is not a int, please input an int"
+    playerSkills = dict(zip(skills, userInputs)) 
+    print playerSkills
+    return playerSkills
+def generateEnemeyWeighted(playerSkills, userEqu):
+    print "grenerates an enamy baised on the PC's lvl and equ"
+    skills = ['Int','Chr' ,'Str' ,'Con','Wis','Dex']
+    enskill = []
+    playerSkills
+    for item in playerSkills.iteritem:
+        enSkillChange = random.randint(1,201)
+        enSkillChange = enSkillChange/100
+        enskill = enSkillChange * item
+        enSkill.append(enskill)
+    #run a loop about chooseing each of these 
+    enSkills = dict(zip(skills, enskill)) 
+    print enSkills
+    return enSkills
+def whichWayToWalk():
+    promt = "witch way would you like to walk? North, South, East, or West"
+    userInput = raw_input(promt)
+    strSanatazers(userInput)
+    if north or south or east or west in userInput:
+        randEncouter()
+def randEncouter(userName):
+    print "genrates a radom encounter"
+    roomNum = random.randint(0,1)
+    roomTypeList = [fight, loot]
+    roomType = roomNum[roomTypeList]
+    return roomType
+def displayLoot(userName, userSkills, userEqu):
+   print "AWW SHUCKS"
+   #dictonary showing stats
+   #ask if want to take
+   # if took:
+       # return new stats
+   # if not took 
+       # break
+def getUserThrow(throwListComp):
+    print "asks and hands off to cacuations the users throw"
+    #code to get the user's throw goes here
+   
+
+    #this is the return statement that will send the value back
+    return userThrow
+
+
+def getComputerThrow(throwListPC):
+    print "asks and hands off to cacuations the computer throw"
+#code to get the computer's throw goes here
+
+
+    #this is the return statement that will send the value back
+    return computerThrow
+def whoHitsFirst(userthrow, userEqu,botThrow, botEqu):
+    print "who hits first"
+    #take the speed of bolth, find who hits first and retun boolth
+        #
+    return firstToHit & secondToHit 
+def calculations(strikeFirstToHit):
+    print "caculates damage"
+    #if blocking
+    #if stabbing/bashing
+        #area of point of weapon / speed = 
+        #compare to armor
+        #check siccues 
+    #if slashing 
+        #find points that hit 
+        #caculate thier speed using the radius of the thing 
+        # comapre to arourmor 
+            #change to blunt if not breaking layer
+        #if slashing dmg higher than armour deformation 
+            #apply debudd o blade 
+            #repeat cacualtions for next set of point/layer
+        #spead AFTER armour pen = caculatedForce - armourPen 
+     #if siccusful
+        #use points hit and spead AFTER armour pen to cacualte tissue dmg 
+        #apply debuff to effected party 
+        #stop other attack?
+            #if on limb delivering attack
+    # return damage
+def announceRoundResults(damagePC, damageEn):
+    "tells user results of the round"
+#code to display the winner of the round goes here
+
+
+#there is nothing to return from this function
+
+
+def updateScore(winner, userScore, computerScore):
+    #code to u0pdate the score goes here
+    print("This is the updateScore function")
+    print("The winner is "+ winner)
+    print("The value of userScore is "+ str(userScore))
+    print("The value of computerScore is "+ str(computerScore))
+
+    #this is the return statement that will send the values back
+    return userScore, computerScore
+
+
+
+def askForReplay(userName):
+    print "asks for replay"
+    #code to ask if user wants to play again goes here
+
+
+    #this is the return statement that will send the value back
+    return replayDesired
+
+
+def announceFinalResults(userName, userScore, computerScore):
+    print "annonces final resuls:"
+    #code to announce final results goes here
+
+
+
+    #there is nothing to return from this function
+
+
+
+
+def displayGameOver():
+    print "game over"
+    #code to say game is over goes here
+    #you could do that simply with printing to the console, but you might also want to do it with music, pictures, or maybe the turtle!
+
+
+    #there is nothing to return from this function
+
