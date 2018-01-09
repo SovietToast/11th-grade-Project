@@ -12,7 +12,8 @@ def main():
     while playerAlive == true:
         getWalkDirection()
         if roomType == fight:
-            generateEnemeyWeighted(playerSkills, userEqu)
+            enSkills = generateEnemeyWeighted(playerSkills, userEqu)
+            en(enSkills)
             #store stats
             comabat(userSkills, userEqu, botSkills, botEqu)
             updateScore(winner)
@@ -26,24 +27,26 @@ def main():
         if roomType == loot:
             displayLoot(userName, userSkills, userEqu)
 def theBigBookOfThings():
-    #http://dwarffortresswiki.org/index.php/DF2014:Material_science#Effects_on_Combat  Material	Density	Impact Yield     2*(Impact Fracture) - Impact Yield	,Shear Fracture,Sharpness, Bolt	adj.	Sword	adj.	Mace	min M
+       #http://dwarffortresswiki.org/index.php/DF2014:Material_science#Effects_on_Combat  Material	Density	Impact Yield     2*(Impact Fracture) - Impact Yield	,Shear Fracture,Sharpness, Bolt	adj.	Sword	adj.	Mace	min M
     #http://www.bronze-age-swords.com/intro.htm
-    mat={ Bronze ={8.25, 0.60, 1.08, 0.24, <=1%, 1, 49, 12, 75, 18, 138, 43,},
-          Copper = {8.93, 0.25, 1.30, 0.22, <1%, 1,	49, 11, 77, 17, 138, 52},
-          Divine metal ={ 1.00, 1.00, 3.00, 2.00, 0, 1.2, 30, 72, 31, 74, 86, 120},
-          Glass = {2.6, 1.00, 1.00,0.04,4%/<1%,1.5,--,--,53,3.2,116,40},
-          Iron ={7.85, 0.54, 1.62, 0.31, <1%,1, 49, 15,75, 23, 137, 65},
-          Leather ={0.50, 0.01, 0.01, 0.03,100%,--,	--,--,--,--,--,0.4},
-          Obsidian ={2.67, 1.00, 1.00, 0.04,4%/<1%,	2,--,--,54,4.3,117,40},
-          Platinum ={21.4, 0.35, 1.05, 0.20,<1%,1		--	--	86	17	145	42},
-          Silver ={10.49, 0.35, 0.84, 0.17,<1%,1		49	8.3	79	13	140	34},
-          Slade ={200, 4.00, 6.00,5.00, <1%, 0.1,--,--,93,46,149,240},
-          Steel ={7.85, 1.51, 3.54, 0.72,	2%/<1%,1, 49, 35,	75,54,137,	142}
+    mat={ Bronze ={Mat Den:8.25,Imp Y:0.60,M:1.08,ShFr: 0.24,Ela:<=1%,Shar: 1, Bolt:49, Badj:12, Sword:75, sadj:18, Mace:138, min M:43,},
+          Copper = {Mat Den:8.93, Imp Y:0.25,M: 1.30,ShFr: 0.22,Ela:<1%,Shar: 1,Bolt:49, Badj:11, Sword:77, sadj:17, Mace:138, min M:52},
+          Divine metal ={Mat Den:1.00,Imp Y: 1.00,M: 3.00,ShFr: 2.00,Ela:0,Shar: 1.2, Bolt:30, Badj:72, Sword:31, sadj:74, Mace:86, min M:120},
+          Glass = {Mat Den:2.6, Imp Y:1.00,M: 1.00,ShFr:0.04,Ela:4%/<1%,Shar:1.5,Bolt:--,Badj:--,Sword:53,sadj:3.2,Mace:116,min M:40},
+          Iron ={Mat Den:7.85,Imp Y:0.54,M: 1.62, ShFr:0.31, Ela:1%,Shar:1, Bolt:49, Badj:15,Sword:75, sadj:23, Mace:137, min M:65},
+          Leather ={Mat Den:0.50,Imp Y:0.01,M: 0.01, ShFr:0.03,Ela:100%,Shar:--,Bolt:--,Badj:--,Sword:--,sadj:--,Mace:--,min M:0.4},
+          Obsidian ={Mat Den:2.67,Imp Y:1.00,M: 1.00, ShFr:0.04,Ela:4%/<1%,Shar:2,Bolt:--,Badj:--,Sword:54,sadj:4.3,Mace:117,min M:40},
+          Platinum ={Mat Den:21.4,Imp Y:0.35,M: 1.05, ShFr:0.20,Ela:<1%,Shar:1,Bolt:--,Badj:--,Sword:86,sadj:17,Mace:145,min M:42},
+          Silver ={Mat Den:10.49,Imp Y:0.35,M: 0.84, ShFr:0.17,Ela:<1%,Shar:1,Bolt:49,Badj:8.3,Sword:79,sadj:13,Mace:140,min M:34},
+          Slade ={Mat Den:200,Imp Y:4.00,M: 6.00,ShFr:5.00,Ela: <1%, Shar:0.1,Bolt:--,Badj:--,Sword:93,sadj:46,Mace:149,min M:240},
+          Steel ={Mat Den:7.85,Imp Y:1.51, M:3.54, ShFr:0.72,Ela:2%/<1%,Shar:1,Bolt:49,Badj:35,Sword:75,sadj:54,Mace:137,min M:142}
           }
+def en(enSkills):
+    
 def player(playerSkills):
     print playerSkills
     userEqu ={"defaultShirt" :{ "weight" : 1, "piercingRes" : 0 , "cuttingRes": 0}, "defaultPants" :{"weight" : 1, "piercingRes" : 0, "cuttingRes": 0, "defaultWepon":{"Weight": 800g , "sharpness" : 1000 , "length": 36 , "Blade Lenthg": 29, "matreal": bronze}}}
-    
+    #M >= (rSY + (A+1)*rSF) * (10 + 2*Qa) / (S * Qw),
 def comabat(dictionaryGeneral):
     print "this handles combat"
     userThrow = getPlayerThrow()
@@ -143,7 +146,7 @@ def displayLoot(userName, userSkills, userEqu):
 def getUserThrow(throwListComp):
     print "asks and hands off to cacuations the users throw"
     #code to get the user's throw goes here
-   
+    
 
     #this is the return statement that will send the value back
     return userThrow
@@ -163,21 +166,36 @@ def whoHitsFirst(userthrow, userEqu,botThrow, botEqu):
     return firstToHit & secondToHit 
 def calculations(strikeFirstToHit):
     print "caculates damage"
-    #if blocking
-    #if stabbing/bashing
-        #area of point of weapon / speed = 
-        #compare to armor
-        #check siccues 
-    #if slashing 
-        #find points that hit 
-        #caculate thier speed using the radius of the thing 
-        # comapre to arourmor 
-            #change to blunt if not breaking layer
-        #if slashing dmg higher than armour deformation 
-            #apply debudd o blade 
-            #repeat cacualtions for next set of point/layer
-        #spead AFTER armour pen = caculatedForce - armourPen 
-     #if siccusful
+    M = fhS * fhL * fhWW
+    rsy = strikeFirstToHit/ 
+    if strike == Sharp:
+        if M >= (rSY + (A+1)*rSF) * (10 + 2*Qa) / (S * Qw):
+            #cut through
+        if M < (rSY + (A+1)*rSF) * (10 + 2*Qa) / (S * Qw):
+                strike = blunt 
+                M = M * SHEAR_STRAIN_AT_YIELD/50000
+                
+where:
+
+rSY is the ratio of layer's to weapon's SHEAR_YIELD
+rSF is ditto with SHEAR_FRACTURE
+A is attack contact area
+S is weapon material sharpness multiplier (1x for most metals, 1.2x for divine metal, 1.5x for glass, 2x for obsidian, 10x for adamantine and 0.1x for all other materials)
+Qw is quality sharpness multiplier (1x for normal quality, 1.4x for fine, 2x for masterwork (or artifact) etc.)
+Qa is armor quality multiplier (same but x3 for artifacts)
+    if strike == blunt:
+        Blunt attacks can be entirely deflected by armor if weapon's IMPACT_YIELD is especially low relative to armor's density:
+        if WeponImpY/ == 
+         2 * Sw * IYw < A * Da,
+
+where Da is armor material's density (in g/cm3), A is attack contact area, Sw is weapon size and IYw is its impact yield in MPa (i.e. raw value divided by 106).
+
+Otherwise, attack must have minimum momentum of:
+
+M >= (2*IF - IY) * (2 + 0.4*Qa) * A,
+
+where IF and IY are layer's impact fracture and impact yield in MPa, Qa is armor quality multiplier and A is contact area as above. Again, on success layer is considered thrashed, momentum is reduced by about 5% and next layer is tested.
+    #if siccusful
         #use points hit and spead AFTER armour pen to cacualte tissue dmg 
         #apply debuff to effected party 
         #stop other attack?
