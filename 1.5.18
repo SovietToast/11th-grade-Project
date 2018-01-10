@@ -41,13 +41,30 @@ def theBigBookOfThings():
           Slade ={Mat Den:200,Imp Y:4.00,M: 6.00,ShFr:5.00,Ela: <1%, Shar:0.1,Bolt:--,Badj:--,Sword:93,sadj:46,Mace:149,min M:240},
           Steel ={Mat Den:7.85,Imp Y:1.51, M:3.54, ShFr:0.72,Ela:2%/<1%,Shar:1,Bolt:49,Badj:35,Sword:75,sadj:54,Mace:137,min M:142}
           }
-def en(enSkills):
+def en(enSkills,enEqu):
+    if FirstTimeAlive == true
+        enParts = [Rarm, Larm, Lleg, Rleg, Head, Torso]
+        enBlood# = 5500
+        FirstTimeAlive = False
+    if EnBlood <= 3850
+        for skill in dict.enSkills:
+            skill = skill * (enBlood/5000) * 1.3
+    if enBlood <= 3300
+        enAlive = false
     
+    enEqu
+    enSkills
+    return enAlive, enSkills, enParts, enEqu
 def player(playerSkills):
     print playerSkills
-    userEqu ={"defaultShirt" :{ "weight" : 1, "piercingRes" : 0 , "cuttingRes": 0}, "defaultPants" :{"weight" : 1, "piercingRes" : 0, "cuttingRes": 0, "defaultWepon":{"Weight": 800g , "sharpness" : 1000 , "length": 36 , "Blade Lenthg": 29, "matreal": bronze}}}
+    userParts = [Rarm, Larm, Lleg, Rleg, Head, Torso]
+    userEqu = {"defaultShirt" :{ "weight" : 1, "piercingRes" : 0 , "cuttingRes": 0}, "defaultPants" :{"weight" : 1, "piercingRes" : 0, "cuttingRes": 0, "defaultWepon":{"Weight": 800g , "sharpness" : 1000 , "length": 36 , "Blade Lenthg": 29, "matreal": bronze}}}
+    return userEqu, 
     #M >= (rSY + (A+1)*rSF) * (10 + 2*Qa) / (S * Qw),
-def comabat(dictionaryGeneral):
+speedCaculation(userThrow, botThrow)
+    
+
+def comabat(dictionaryGeneral, userskills, userEqu, enSkills, enEqu):
     print "this handles combat"
     userThrow = getPlayerThrow()
     botThrow = getBotThrow()
@@ -121,6 +138,8 @@ def generateEnemeyWeighted(playerSkills, userEqu):
         enSkill.append(enskill)
     #run a loop about chooseing each of these 
     enSkills = dict(zip(skills, enskill)) 
+    
+    enequ = []
     print enSkills
     return enSkills
 def whichWayToWalk():
@@ -135,14 +154,35 @@ def randEncouter(userName):
     roomTypeList = [fight, loot]
     roomType = roomNum[roomTypeList]
     return roomType
-def displayLoot(userName, userSkills, userEqu):
+def displayLoot(, userEqu):
    print "AWW SHUCKS"
-   #dictonary showing stats
-   #ask if want to take
-   # if took:
-       # return new stats
-   # if not took 
-       # break
+   whatisItList = [gear, weapon]
+   whatIsItNum = 
+   whatIsIt = whatIsItNum(whatIsItList)
+   if whatIsIt == gear:
+        whatIsitForList = [head, torso, Rarm, Larm, Hands, Rleg, Lleg, Neck]
+        whatIsItForNum = 
+        whatIsitFor = WhatIstItForNum(WhatIsItForList)
+        whatIsitForList = [Iron, Steel, Bronze, Copper,Iron, Steel, Bronze, Iron, Steel, Bronze, Copper, Glass, Iron, Iron]
+        whatIsItForNum = 
+        whatIsitMat = WhatIstItForNum(WhatIsItForList)
+        prompt = "would you like to pickup this" + whatisit + "? It is made from" + whatIsItMat + "if so say 'yes'"
+        userInput = raw_Input(prompt)
+        if userInput == yes: 
+            userequ.update({str(whatIsItFor): whatIsItMat })
+   if whatIsIt == weapon:
+        whatIsitForList = [Iron, Steel, Bronze, Copper,Iron, Steel, Bronze, Iron, Steel, Bronze, Copper, Glass, Iron, Iron]
+        whatIsItForNum = 
+        whatIsitMat = WhatIstItForNum(WhatIsItForList)
+        whatIsitForList = [sword, Mace]
+        whatIsItForNum = 
+        whatIsitMat = WhatIstItForNum(WhatIsItForList)
+        prompt = "would you like to pickup this" + whatisit + "? It is made from" + whatIsItMat + "if so say 'yes'"
+        userInput = raw_Input(prompt)
+        if userInput == yes: 
+            userequ.update({"weapon": })
+   
+   return userEqu
 def getUserThrow(throwListComp):
     print "asks and hands off to cacuations the users throw"
     #code to get the user's throw goes here
