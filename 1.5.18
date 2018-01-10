@@ -2,11 +2,14 @@
 import time
 import string
 import random
-def main():
+def start():
     print "this is main, it handles everything"
     userName = getUserName()
     greetUser(userName)
     playerSkills = createCharacter(userName)
+    main(playerSkills)
+    return 
+def main():
     theBigBookOfConstants()
     player(playerSkills)
     while playerAlive == true:
@@ -29,27 +32,22 @@ def main():
 def theBigBookOfThings():
        #http://dwarffortresswiki.org/index.php/DF2014:Material_science#Effects_on_Combat  Material	Density	Impact Yield     2*(Impact Fracture) - Impact Yield	,Shear Fracture,Sharpness, Bolt	adj.	Sword	adj.	Mace	min M
     #http://www.bronze-age-swords.com/intro.htm
-    mat={ Bronze ={Mat Den:8.25,Imp Y:0.60,M:1.08,ShFr: 0.24,Ela:<=1%,Shar: 1, Bolt:49, Badj:12, Sword:75, sadj:18, Mace:138, min M:43,},
-          Copper = {Mat Den:8.93, Imp Y:0.25,M: 1.30,ShFr: 0.22,Ela:<1%,Shar: 1,Bolt:49, Badj:11, Sword:77, sadj:17, Mace:138, min M:52},
-          Divine metal ={Mat Den:1.00,Imp Y: 1.00,M: 3.00,ShFr: 2.00,Ela:0,Shar: 1.2, Bolt:30, Badj:72, Sword:31, sadj:74, Mace:86, min M:120},
-          Glass = {Mat Den:2.6, Imp Y:1.00,M: 1.00,ShFr:0.04,Ela:4%/<1%,Shar:1.5,Bolt:--,Badj:--,Sword:53,sadj:3.2,Mace:116,min M:40},
-          Iron ={Mat Den:7.85,Imp Y:0.54,M: 1.62, ShFr:0.31, Ela:1%,Shar:1, Bolt:49, Badj:15,Sword:75, sadj:23, Mace:137, min M:65},
-          Leather ={Mat Den:0.50,Imp Y:0.01,M: 0.01, ShFr:0.03,Ela:100%,Shar:--,Bolt:--,Badj:--,Sword:--,sadj:--,Mace:--,min M:0.4},
-          Obsidian ={Mat Den:2.67,Imp Y:1.00,M: 1.00, ShFr:0.04,Ela:4%/<1%,Shar:2,Bolt:--,Badj:--,Sword:54,sadj:4.3,Mace:117,min M:40},
-          Platinum ={Mat Den:21.4,Imp Y:0.35,M: 1.05, ShFr:0.20,Ela:<1%,Shar:1,Bolt:--,Badj:--,Sword:86,sadj:17,Mace:145,min M:42},
-          Silver ={Mat Den:10.49,Imp Y:0.35,M: 0.84, ShFr:0.17,Ela:<1%,Shar:1,Bolt:49,Badj:8.3,Sword:79,sadj:13,Mace:140,min M:34},
-          Slade ={Mat Den:200,Imp Y:4.00,M: 6.00,ShFr:5.00,Ela: <1%, Shar:0.1,Bolt:--,Badj:--,Sword:93,sadj:46,Mace:149,min M:240},
-          Steel ={Mat Den:7.85,Imp Y:1.51, M:3.54, ShFr:0.72,Ela:2%/<1%,Shar:1,Bolt:49,Badj:35,Sword:75,sadj:54,Mace:137,min M:142}
+    mat ={ 
+          Bronze : {"MatDen" : 8.25, "ImpY" : 0.60, "M" :1.08 , "ShFr" : 0.24, "Shar" : 1, "Sword" : 75, "sadj" : 18 , "Mace" : 138 , "minM" :43 },
+          Copper : {"MatDen":8.93, "ImpY":0.25,"M": 1.30,"ShFr": 0.22,"Shar": 1,  "Sword":77, "sadj":17, "Mace":138,"minM":52},
+          Iron : {"MatDen":7.85,"ImpY":0.54,"M": 1.62, "ShFr":0.31,"Shar":1,  "Sword":75, "sadj":23, "Mace":137, "minM" :65},
+          Silver : {"MatDen":10.49,"ImpY":0.35,"M": 0.84, "ShFr":0.17,"Shar":1,"Sword":79,"sadj":13,"Mace":140,"minM":34},
+          Steel : {"MatDen":7.85,"ImpY":1.51, "M":3.54,"ShFr":0.72,"Shar":1,"Sword":75,"sadj":54,"Mace":137,"minM":142}
           }
 def en(enSkills,enEqu):
-    if FirstTimeAlive == true
+    if FirstTimeAlive == true:
         enParts = [Rarm, Larm, Lleg, Rleg, Head, Torso]
         enBlood# = 5500
         FirstTimeAlive = False
-    if EnBlood <= 3850
+    if EnBlood <= 3850:
         for skill in dict.enSkills:
             skill = skill * (enBlood/5000) * 1.3
-    if enBlood <= 3300
+    if enBlood <= 3300:
         enAlive = false
     
     enEqu
@@ -62,15 +60,30 @@ def player(playerSkills):
     return userEqu, 
     #M >= (rSY + (A+1)*rSF) * (10 + 2*Qa) / (S * Qw),
 speedCaculation(userThrow, botThrow)
+    M = Str * Vel / ( 106/180 + 10*F/W ),
     
-
 def comabat(dictionaryGeneral, userskills, userEqu, enSkills, enEqu):
     print "this handles combat"
     userThrow = getPlayerThrow()
     botThrow = getBotThrow()
-    speedCaculation()
-    if userThrow == first:
-        caculations(userThrow)
+    caculations(userThrow)
+    caculations(botThrow)
+    
+def caculations
+    a= 
+    if edged:
+        A= 
+        if M >= ((layerShFr*.5)/(weaponShFr*.5) + (A+1)*rSF) * 12 
+            if M - ((layerShFr*.5)/(weaponShFr*.5) + (A+1)*layerSF/weaponSF) * 12 >= partthickness/resistance:
+            if M - ((layerShFr*.5)/(weaponShFr*.5) + (A+1)*layerSF/weaponSF) * 12 < partthickness/resistance:    
+            
+        change to blunt
+    if blunt 
+        A = 
+        if 2 * Sw * weaponImpY < A * layerMatDen
+        if M >= (2*layerImpF - layerImpY) * (2 + 0.4*1) * A,
+        
+    
         #update dicotnary
     #if damage == dehablitating: 
        #skip turn for second
@@ -183,10 +196,11 @@ def displayLoot(, userEqu):
             userequ.update({"weapon": })
    
    return userEqu
-def getUserThrow(throwListComp):
+def getUserThrow(enParts):
     print "asks and hands off to cacuations the users throw"
     #code to get the user's throw goes here
-    
+    promt = "where would you like to attack you enamy?" + enParts + "choose one of these"
+     
 
     #this is the return statement that will send the value back
     return userThrow
@@ -194,9 +208,9 @@ def getUserThrow(throwListComp):
 
 def getComputerThrow(throwListPC):
     print "asks and hands off to cacuations the computer throw"
-#code to get the computer's throw goes here
-
-
+    #code to get the computer's throw goes here
+    
+    
     #this is the return statement that will send the value back
     return computerThrow
 def whoHitsFirst(userthrow, userEqu,botThrow, botEqu):
@@ -288,4 +302,3 @@ def displayGameOver():
 
 
     #there is nothing to return from this function
-
