@@ -57,11 +57,7 @@ def player(playerSkills):
     print playerSkills
     userParts = [Rarm, Larm, Lleg, Rleg, Head, Torso]
     userEqu = {"defaultShirt" :{ "weight" : 1, "piercingRes" : 0 , "cuttingRes": 0}, "defaultPants" :{"weight" : 1, "piercingRes" : 0, "cuttingRes": 0, "defaultWepon":{"Weight": 800g , "sharpness" : 1000 , "length": 36 , "Blade Lenthg": 29, "matreal": bronze}}}
-    return userEqu, 
-    #M >= (rSY + (A+1)*rSF) * (10 + 2*Qa) / (S * Qw),
-speedCaculation(userThrow, botThrow)
-    M = Str * Vel / ( 106/180 + 10*F/W ),
-    
+    return userEqu,
 def comabat(dictionaryGeneral, userskills, userEqu, enSkills, enEqu):
     print "this handles combat"
     userThrow = getPlayerThrow()
@@ -69,13 +65,58 @@ def comabat(dictionaryGeneral, userskills, userEqu, enSkills, enEqu):
     caculations(userThrow)
     caculations(botThrow)
     
-def caculations
+def caculations(userThrow, dictionaryGeneral, userskills, userEqu, enSkills, enEqu, enParts)
+    if edged:
+        A = 2
+        if M >= ((layerShFr)/(weaponShFr) + (A+1)*rSF) * 12 
+            if M - ((layerShFr)/(weaponShFr) + (A+1)*layerSF/weaponSF) * 12 >= partthickness/resistance:
+            if M - ((layerShFr)/(weaponShFr) + (A+1)*layerSF/weaponSF) * 12 < partthickness/resistance:    
+            
+        change to blunt
+    if blunt 
+        A = 2
+        if 2 * Sw * weaponImpY < A * layerMatDen:
+            print("attack has been deflected")
+        if M >= (2*layerImpF - layerImpY) * (2 + 0.4*1) * A
+            print("the attack is siccesful")
+            if userThrow == Rarm or Larm or Lleg or Rleg or head:
+                if M - (2*layerImpF - layerImpY) * (2 + 0.4*1) * A >= 40:
+                    Print("a bone has beem broken, the limb is nonfucontonal)
+                    enParts.update { userThrow: notThere}
+                if M - (2*layerImpF - layerImpY) * (2 + 0.4*1) * A =< 40:
+            if userThrow == torso:
+                if M - (2*layerImpF - layerImpY) * (2 + 0.4*1) * A >= 100:
+                    print(the en has died)
+        #update dicotnary
+    #if damage == dehablitating: 
+       #skip turn for second
+    #if it hits
+       #apply debuff
+      #caculations(botThrow)
+      #calcuations baised of type of strike
+      #if botThrow == first:
+      #caculations(botthrow)
+      #update dicotnary
+      #if damage == dehablitating: 
+          #skip turn for second
+      #if damage == true:
+          #apply debuff
+      #caculations(userThrow)
+  #do the next one
+  #announce results of the round
+    #update the player status
+  #next tick
+  #if player == dead
+      #announce final results
+      #say the game is over
+def caculations(botThrow, dictionaryGeneral, userskills, userEqu, enSkills, enEqu)
+    
     a= 
     if edged:
         A= 
-        if M >= ((layerShFr*.5)/(weaponShFr*.5) + (A+1)*rSF) * 12 
-            if M - ((layerShFr*.5)/(weaponShFr*.5) + (A+1)*layerSF/weaponSF) * 12 >= partthickness/resistance:
-            if M - ((layerShFr*.5)/(weaponShFr*.5) + (A+1)*layerSF/weaponSF) * 12 < partthickness/resistance:    
+        if M >= ((layerShFr)/(weaponShFr) + (A+1)*rSF) * 12 
+            if M - ((layerShFr)/(weaponShFr) + (A+1)*layerSF/weaponSF) * 12 >= partthickness/resistance:
+            if M - ((layerShFr)/(weaponShFr) + (A+1)*layerSF/weaponSF) * 12 < partthickness/resistance:    
             
         change to blunt
     if blunt 
@@ -151,7 +192,6 @@ def generateEnemeyWeighted(playerSkills, userEqu):
         enSkill.append(enskill)
     #run a loop about chooseing each of these 
     enSkills = dict(zip(skills, enskill)) 
-    
     enequ = []
     print enSkills
     return enSkills
@@ -167,8 +207,7 @@ def randEncouter(userName):
     roomTypeList = [fight, loot]
     roomType = roomNum[roomTypeList]
     return roomType
-def displayLoot(, userEqu):
-   print "AWW SHUCKS"
+def displayLoot(userEqu):
    whatisItList = [gear, weapon]
    whatIsItNum = 
    whatIsIt = whatIsItNum(whatIsItList)
@@ -189,12 +228,11 @@ def displayLoot(, userEqu):
         whatIsitMat = WhatIstItForNum(WhatIsItForList)
         whatIsitForList = [sword, Mace]
         whatIsItForNum = 
-        whatIsitMat = WhatIstItForNum(WhatIsItForList)
+        whatIsitType = WhatIstItForNum(WhatIsItForList)
         prompt = "would you like to pickup this" + whatisit + "? It is made from" + whatIsItMat + "if so say 'yes'"
         userInput = raw_Input(prompt)
         if userInput == yes: 
-            userequ.update({"weapon": })
-   
+            userEqu.update({"weapon":whatIsitType:{whatIsitMat}})
    return userEqu
 def getUserThrow(enParts):
     print "asks and hands off to cacuations the users throw"
@@ -255,50 +293,15 @@ where IF and IY are layer's impact fracture and impact yield in MPa, Qa is armor
         #stop other attack?
             #if on limb delivering attack
     # return damage
-def announceRoundResults(damagePC, damageEn):
-    "tells user results of the round"
-#code to display the winner of the round goes here
-
-
-#there is nothing to return from this function
-
-
-def updateScore(winner, userScore, computerScore):
-    #code to u0pdate the score goes here
-    print("This is the updateScore function")
-    print("The winner is "+ winner)
-    print("The value of userScore is "+ str(userScore))
-    print("The value of computerScore is "+ str(computerScore))
-
-    #this is the return statement that will send the values back
-    return userScore, computerScore
-
-
-
 def askForReplay(userName):
-    print "asks for replay"
-    #code to ask if user wants to play again goes here
-
-
-    #this is the return statement that will send the value back
+    propmt = "would you like to try agian"
+    userInput = raw_input(propmt)
+    if "yes" in userInput:
+        start()
+    in "no" in userInput:
+        displayGameOver()
+       #this is the return statement that will send the value back
     return replayDesired
-
-
-def announceFinalResults(userName, userScore, computerScore):
-    print "annonces final resuls:"
-    #code to announce final results goes here
-
-
-
-    #there is nothing to return from this function
-
-
-
-
 def displayGameOver():
-    print "game over"
-    #code to say game is over goes here
-    #you could do that simply with printing to the console, but you might also want to do it with music, pictures, or maybe the turtle!
-
-
-    #there is nothing to return from this function
+    print "game over, you died"
+    exit
