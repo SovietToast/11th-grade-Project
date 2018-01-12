@@ -1,5 +1,4 @@
 #Sean Towse 12.4.17
-import time
 import string
 import random
 def start():
@@ -10,9 +9,9 @@ def start():
     main(playerSkills)
     return 
 def main():
-    theBigBookOfConstants()
-    player(playerSkills)
-    while playerAlive == true:
+    theBigBook()
+    useEqu = player(playerSkills)
+    if playerAlive == true:
         getWalkDirection()
         if roomType == fight:
             enSkills = generateEnemeyWeighted(playerSkills, userEqu)
@@ -26,105 +25,93 @@ def main():
                 askForReplay(userName)
             if playerAlive == true:
                 break
-            break
         if roomType == loot:
             displayLoot(userName, userSkills, userEqu)
-def theBigBookOfThings():
-       #http://dwarffortresswiki.org/index.php/DF2014:Material_science#Effects_on_Combat  Material	Density	Impact Yield     2*(Impact Fracture) - Impact Yield	,Shear Fracture,Sharpness, Bolt	adj.	Sword	adj.	Mace	min M
-    #http://www.bronze-age-swords.com/intro.htm
-    mat ={ 
-          Bronze : {"MatDen" : 8.25, "ImpY" : 0.60, "M" :1.08 , "ShFr" : 0.24, "Shar" : 1, "Sword" : 75, "sadj" : 18 , "Mace" : 138 , "minM" :43 },
-          Copper : {"MatDen":8.93, "ImpY":0.25,"M": 1.30,"ShFr": 0.22,"Shar": 1,  "Sword":77, "sadj":17, "Mace":138,"minM":52},
-          Iron : {"MatDen":7.85,"ImpY":0.54,"M": 1.62, "ShFr":0.31,"Shar":1,  "Sword":75, "sadj":23, "Mace":137, "minM" :65},
-          Silver : {"MatDen":10.49,"ImpY":0.35,"M": 0.84, "ShFr":0.17,"Shar":1,"Sword":79,"sadj":13,"Mace":140,"minM":34},
-          Steel : {"MatDen":7.85,"ImpY":1.51, "M":3.54,"ShFr":0.72,"Shar":1,"Sword":75,"sadj":54,"Mace":137,"minM":142}
-          }
+    
+def theBigBook():
+    mat ={Bronze : {"MatDen" : 8.25, "ImpY" : 0.60, "M" :1.08 , "ShFr" : 0.24, "Shar" : 1, "Sword" : 75, "sadj" : 18 , "Mace" : 138 , "minM" :43 },
+    Copper : {"MatDen":8.93, "ImpY":0.25,"M": 1.30,"ShFr": 0.22,"Shar": 1,  "Sword":77, "sadj":17, "Mace":138,"minM":52},
+    Iron : {"MatDen":7.85,"ImpY":0.54,"M": 1.62, "ShFr":0.31,"Shar":1,  "Sword":75, "sadj":23, "Mace":137, "minM" :65},
+    Silver : {"MatDen":10.49,"ImpY":0.35,"M": 0.84, "ShFr":0.17,"Shar":1,"Sword":79,"sadj":13,"Mace":140,"minM":34},
+    Cloth : {"MatDen": 1 ,"ImpY": 0, "M": 0,"ShFr":1000,"Shar":0,"Sword":0,"sadj":0,"Mace":0,"minM":0},
+    Steel : {"MatDen":7.85,"ImpY":1.51, "M":3.54,"ShFr":0.72,"Shar":1,"Sword":75,"sadj":54,"Mace":137,"minM":142}}
 def en(enSkills,enEqu):
     if FirstTimeAlive == true:
         enParts = [Rarm, Larm, Lleg, Rleg, Head, Torso]
-        enBlood# = 5500
-        FirstTimeAlive = False
-    if EnBlood <= 3850:
-        for skill in dict.enSkills:
-            skill = skill * (enBlood/5000) * 1.3
-    if enBlood <= 3300:
-        enAlive = false
-    
-    enEqu
-    enSkills
-    return enAlive, enSkills, enParts, enEqu
+        enBlood = 5500
+        FirstTimeAlive = false
+    return enAlive, enParts
 def player(playerSkills):
     print playerSkills
     userParts = [Rarm, Larm, Lleg, Rleg, Head, Torso]
-    userEqu = {"defaultShirt" :{ "weight" : 1, "piercingRes" : 0 , "cuttingRes": 0}, "defaultPants" :{"weight" : 1, "piercingRes" : 0, "cuttingRes": 0, "defaultWepon":{"Weight": 800g , "sharpness" : 1000 , "length": 36 , "Blade Lenthg": 29, "matreal": bronze}}}
-    return userEqu,
+    userEqu = {"defaultShirt" :{ "weight" : 1, "resistance" : 1 , "thickness": 1 , "mat": cloth} ,
+               "defaultPants" :{"weight" : 1, "resistance" : 1, "thickness": 1} ,
+               "defaultWepon":{"type" : edged, "Weight": 800 , "sharpness" : 1000 , "length": 36 , "Blade Lenthg": 29, "matreal": bronze}
+               }
+    return userEqu
 def comabat(dictionaryGeneral, userskills, userEqu, enSkills, enEqu):
     print "this handles combat"
     userThrow = getPlayerThrow()
     botThrow = getBotThrow()
     caculations(userThrow)
     caculations(botThrow)
-    
-def caculations(userThrow, dictionaryGeneral, userskills, userEqu, enSkills, enEqu, enParts)
+def caculations(userThrow, dictionaryGeneral, userskills, userEqu, enSkills, enEqu, enParts):
     if edged:
         A = 2
-        if M >= ((layerShFr)/(weaponShFr) + (A+1)*rSF) * 12 
-            if M - ((layerShFr)/(weaponShFr) + (A+1)*layerSF/weaponSF) * 12 >= partthickness/resistance:
-            if M - ((layerShFr)/(weaponShFr) + (A+1)*layerSF/weaponSF) * 12 < partthickness/resistance:    
-            
-        change to blunt
-    if blunt 
+        if M >= ((layerShFr)/(weaponShFr) + (A+1)*rSF) * 12:
+            force = M - ((layerShFr)/(weaponShFr) + (A+1)*layerSF/weaponSF) * 12
+            resistance = 10
+            worked = false
+            if force >= resistance:
+                worked = true
+            if worked == true:
+                print("a bone has beem broken, the limb is nonfucontonl")
+                enParts.update({userThrow: notThere})
+            if worked == false:
+                print("did not work")
+    if blunt:
         A = 2
+        if 2 * Sw * weaponImpY < A * layerMatDen:
+            print("attack has been deflected")
+        if M >= (2*layerImpF - layerImpY) * (2 + 0.4*1) * A:
+            print("the attack is siccesful")
+            if userThrow == Rarm or Larm or Lleg or Rleg or head:
+                force = M - (2*layerImpF - layerImpY) * (2 + 0.4*1) * A
+                res == 100
+                worked = false
+                if force >= resistance:
+                    worked = true
+                if worked == true:
+                    print("a bone has beem broken, the limb is nonfucontonl")
+                    enParts.update({userThrow: notThere})
+                if worked == false:
+                    print("did not work")
+            if userThrow == torso:
+                force = M - (2*layerImpF - layerImpY) * (2 + 0.4*1) * A 
+                res = 100
+                worked = false
+                if force >= res:
+                    worked = true
+                if worked == true:
+                    print("limb has been wouned, the limb is nonfucontonal)
+                    enParts[(userThrow)] = "gone"
+                if worked == false:
+                    print("the attack faled")
+def caculations(botThrow, dictionaryGeneral, userskills, userEqu, enSkills, enEqu)
+   A = 2
         if 2 * Sw * weaponImpY < A * layerMatDen:
             print("attack has been deflected")
         if M >= (2*layerImpF - layerImpY) * (2 + 0.4*1) * A
             print("the attack is siccesful")
-            if userThrow == Rarm or Larm or Lleg or Rleg or head:
+            if botThrow == Rarm or Larm or Lleg or Rleg or head:
                 if M - (2*layerImpF - layerImpY) * (2 + 0.4*1) * A >= 40:
                     Print("a bone has beem broken, the limb is nonfucontonal)
                     enParts.update { userThrow: notThere}
                 if M - (2*layerImpF - layerImpY) * (2 + 0.4*1) * A =< 40:
-            if userThrow == torso:
+            if botThrow == torso:
                 if M - (2*layerImpF - layerImpY) * (2 + 0.4*1) * A >= 100:
-                    print(the en has died)
-        #update dicotnary
-    #if damage == dehablitating: 
-       #skip turn for second
-    #if it hits
-       #apply debuff
-      #caculations(botThrow)
-      #calcuations baised of type of strike
-      #if botThrow == first:
-      #caculations(botthrow)
-      #update dicotnary
-      #if damage == dehablitating: 
-          #skip turn for second
-      #if damage == true:
-          #apply debuff
-      #caculations(userThrow)
-  #do the next one
-  #announce results of the round
-    #update the player status
-  #next tick
-  #if player == dead
-      #announce final results
-      #say the game is over
-def caculations(botThrow, dictionaryGeneral, userskills, userEqu, enSkills, enEqu)
-    
-    a= 
-    if edged:
-        A= 
-        if M >= ((layerShFr)/(weaponShFr) + (A+1)*rSF) * 12 
-            if M - ((layerShFr)/(weaponShFr) + (A+1)*layerSF/weaponSF) * 12 >= partthickness/resistance:
-            if M - ((layerShFr)/(weaponShFr) + (A+1)*layerSF/weaponSF) * 12 < partthickness/resistance:    
-            
-        change to blunt
-    if blunt 
-        A = 
-        if 2 * Sw * weaponImpY < A * layerMatDen
-        if M >= (2*layerImpF - layerImpY) * (2 + 0.4*1) * A,
-        
-    
+                    print(you have died)
+                    UserAli
         #update dicotnary
     #if damage == dehablitating: 
        #skip turn for second
@@ -212,11 +199,11 @@ def displayLoot(userEqu):
    whatIsItNum = 
    whatIsIt = whatIsItNum(whatIsItList)
    if whatIsIt == gear:
-        whatIsitForList = [head, torso, Rarm, Larm, Hands, Rleg, Lleg, Neck]
-        whatIsItForNum = 
+        whatIsitForList = [head, torso, Rarm, Larm, Hands, Rleg, Lleg,]
+        whatIsItForNum = random.randint(0,7)
         whatIsitFor = WhatIstItForNum(WhatIsItForList)
         whatIsitForList = [Iron, Steel, Bronze, Copper,Iron, Steel, Bronze, Iron, Steel, Bronze, Copper, Glass, Iron, Iron]
-        whatIsItForNum = 
+        whatIsItForNum = random.randint(0,14)
         whatIsitMat = WhatIstItForNum(WhatIsItForList)
         prompt = "would you like to pickup this" + whatisit + "? It is made from" + whatIsItMat + "if so say 'yes'"
         userInput = raw_Input(prompt)
@@ -224,10 +211,10 @@ def displayLoot(userEqu):
             userequ.update({str(whatIsItFor): whatIsItMat })
    if whatIsIt == weapon:
         whatIsitForList = [Iron, Steel, Bronze, Copper,Iron, Steel, Bronze, Iron, Steel, Bronze, Copper, Glass, Iron, Iron]
-        whatIsItForNum = 
+        whatIsItForNum = random.randint(0,14)
         whatIsitMat = WhatIstItForNum(WhatIsItForList)
         whatIsitForList = [sword, Mace]
-        whatIsItForNum = 
+        whatIsItForNum = random.randint(0,2)
         whatIsitType = WhatIstItForNum(WhatIsItForList)
         prompt = "would you like to pickup this" + whatisit + "? It is made from" + whatIsItMat + "if so say 'yes'"
         userInput = raw_Input(prompt)
@@ -237,56 +224,19 @@ def displayLoot(userEqu):
 def getUserThrow(enParts):
     print "asks and hands off to cacuations the users throw"
     #code to get the user's throw goes here
-    promt = "where would you like to attack you enamy?" + enParts + "choose one of these"
-     
+    promt = "where would you like to attack you enamy?" + enParts + "choose one of these, input the seqencal #"
+    if userInput = 
 
     #this is the return statement that will send the value back
     return userThrow
-
-
-def getComputerThrow(throwListPC):
+def getComputerThrow(userParts):
     print "asks and hands off to cacuations the computer throw"
     #code to get the computer's throw goes here
-    
-    
+    whatIsItForNum = random.randint(0,-1)
+    computerThrow = userParts(WhatIsItForList)
     #this is the return statement that will send the value back
     return computerThrow
-def whoHitsFirst(userthrow, userEqu,botThrow, botEqu):
-    print "who hits first"
-    #take the speed of bolth, find who hits first and retun boolth
-        #
-    return firstToHit & secondToHit 
-def calculations(strikeFirstToHit):
-    print "caculates damage"
-    M = fhS * fhL * fhWW
-    rsy = strikeFirstToHit/ 
-    if strike == Sharp:
-        if M >= (rSY + (A+1)*rSF) * (10 + 2*Qa) / (S * Qw):
-            #cut through
-        if M < (rSY + (A+1)*rSF) * (10 + 2*Qa) / (S * Qw):
-                strike = blunt 
-                M = M * SHEAR_STRAIN_AT_YIELD/50000
-                
-where:
 
-rSY is the ratio of layer's to weapon's SHEAR_YIELD
-rSF is ditto with SHEAR_FRACTURE
-A is attack contact area
-S is weapon material sharpness multiplier (1x for most metals, 1.2x for divine metal, 1.5x for glass, 2x for obsidian, 10x for adamantine and 0.1x for all other materials)
-Qw is quality sharpness multiplier (1x for normal quality, 1.4x for fine, 2x for masterwork (or artifact) etc.)
-Qa is armor quality multiplier (same but x3 for artifacts)
-    if strike == blunt:
-        Blunt attacks can be entirely deflected by armor if weapon's IMPACT_YIELD is especially low relative to armor's density:
-        if WeponImpY/ == 
-         2 * Sw * IYw < A * Da,
-
-where Da is armor material's density (in g/cm3), A is attack contact area, Sw is weapon size and IYw is its impact yield in MPa (i.e. raw value divided by 106).
-
-Otherwise, attack must have minimum momentum of:
-
-M >= (2*IF - IY) * (2 + 0.4*Qa) * A,
-
-where IF and IY are layer's impact fracture and impact yield in MPa, Qa is armor quality multiplier and A is contact area as above. Again, on success layer is considered thrashed, momentum is reduced by about 5% and next layer is tested.
     #if siccusful
         #use points hit and spead AFTER armour pen to cacualte tissue dmg 
         #apply debuff to effected party 
